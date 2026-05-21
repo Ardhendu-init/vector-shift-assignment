@@ -4,7 +4,7 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Part 1 complete — Node Abstraction done
+- Part 3 complete — Text Node Enhancements done
 
 ## Current Goal
 
@@ -23,6 +23,13 @@ Update this file whenever the current phase, active feature, or implementation s
 ## In Progress
 
 - Nothing currently
+
+## Recently Completed (Part 3 — Text Node Enhancements)
+
+- Replaced `<input>` with auto-resizing `<textarea>` in `TextNode`
+- Height auto-expands on input (scrollHeight trick); width scales with longest line (clamped 200–600px)
+- `parseVariables()` extracts valid JS identifiers from `{{...}}` patterns; deduplicates via Set; ignores invalid names (e.g. `{{123abc}}`, `{{first-name}}`, `{{hello world}}`)
+- Dynamic input handles rendered on left side, evenly spaced by index
 
 ## Next Up
 
@@ -72,10 +79,10 @@ frontend/src/
 - No significant styling currently applied
 - Task: design a unified, appealing UI; any React styling library is allowed
 
-### Part 3 — Text Node Logic
+### Part 3 — Text Node Enhancements ✅
 - File: `frontend/src/nodes/textNode.js`
-- Task A: auto-resize width/height of node as user types
-- Task B: parse `{{ varName }}` from text input → dynamically render a new left-side Handle per variable (valid JS variable names only)
+- Task A: `<textarea>` auto-resizes height (scrollHeight) and width (longest line × 8 + 60, clamped 200–600px)
+- Task B: `parseVariables()` uses regex `/\{\{\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\s*\}\}/g` — valid JS identifiers only, deduped, drives dynamic left-side Handles via `inputs` prop on BaseNode
 
 ### Part 4 — Backend Integration
 - Frontend file: `frontend/src/submit.js`
