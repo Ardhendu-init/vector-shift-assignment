@@ -13,6 +13,7 @@ export const ConditionNode = ({ id, data }) => {
         { id: `${id}-false`, style: { top: '67%' } },
       ]}
       width={220}
+      color="#ec4899"
     >
       <label>
         If:

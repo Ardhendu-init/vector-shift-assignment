@@ -9,6 +9,7 @@ export const LLMNode = ({ id, data }) => {
         { id: `${id}-prompt`, style: { top: `${200 / 3}%` } },
       ]}
       outputs={[{ id: `${id}-response` }]}
+      color="#8b5cf6"
     >
       <span>This is a LLM.</span>
     </BaseNode>

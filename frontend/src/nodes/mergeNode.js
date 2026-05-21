@@ -9,6 +9,7 @@ export const MergeNode = ({ id, data }) => {
         { id: `${id}-input-b`, style: { top: '67%' } },
       ]}
       outputs={[{ id: `${id}-merged` }]}
+      color="#6366f1"
     >
       <span>Merges two inputs into one.</span>
     </BaseNode>

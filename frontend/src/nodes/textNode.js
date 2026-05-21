@@ -39,6 +39,7 @@ export const TextNode = ({ id, data }) => {
       inputs={inputs}
       outputs={[{ id: `${id}-output` }]}
       width={nodeWidth}
+      color="#f59e0b"
     >
       <label>
         Text:

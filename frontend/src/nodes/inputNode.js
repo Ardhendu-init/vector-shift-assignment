@@ -9,6 +9,7 @@ export const InputNode = ({ id, data }) => {
     <BaseNode
       title="Input"
       outputs={[{ id: `${id}-value` }]}
+      color="#3b82f6"
     >
       <label>
         Name:

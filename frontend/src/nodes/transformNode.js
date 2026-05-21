@@ -10,6 +10,7 @@ export const TransformNode = ({ id, data }) => {
       inputs={[{ id: `${id}-input` }]}
       outputs={[{ id: `${id}-output` }]}
       width={220}
+      color="#14b8a6"
     >
       <label>
         Operation:

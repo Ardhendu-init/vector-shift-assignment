@@ -9,6 +9,7 @@ export const DelayNode = ({ id, data }) => {
       title="Delay"
       inputs={[{ id: `${id}-input` }]}
       outputs={[{ id: `${id}-output` }]}
+      color="#f97316"
     >
       <label>
         Delay (ms):

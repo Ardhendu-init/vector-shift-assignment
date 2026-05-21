@@ -11,6 +11,7 @@ export const APINode = ({ id, data }) => {
       inputs={[{ id: `${id}-body` }]}
       outputs={[{ id: `${id}-response` }]}
       width={220}
+      color="#ef4444"
     >
       <label>
         URL:

@@ -4,11 +4,11 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Part 3 complete — Text Node Enhancements done
+- All 4 parts complete ✅
 
 ## Current Goal
 
-- Begin Part 2: Styling — apply unified, polished UI design across all components
+- Review, test, and push final state
 
 ## Completed
 
@@ -23,6 +23,22 @@ Update this file whenever the current phase, active feature, or implementation s
 ## In Progress
 
 - Nothing currently
+
+## Recently Completed (Part 2 — UI Polish)
+
+- `index.css`: global design tokens — `.node-body` styles all child inputs/selects/textareas/labels uniformly; `.submit-btn` hover; `.draggable-chip` hover + active
+- `BaseNode.js`: white card (10px radius, border, shadow), colored header bar via `color` prop, `nodrag` on body div
+- `draggableNode.js`: colored top accent strip (`border-top: 3px solid color`), dark card, hover/active via CSS class
+- `toolbar.js`: dark `#0f172a` bar, "Nodes" label, all 9 chips with distinct colors
+- `submit.js`: dark footer bar, indigo `Submit Pipeline` button
+- `App.js`: flex column `100vh` layout
+- `ui.js`: canvas uses `flex: 1` to fill remaining height; fixed `100wv` typo
+- All 9 node files: each passes its own `color` to BaseNode (blue/violet/emerald/amber/red/orange/teal/indigo/pink)
+
+## Recently Completed (Part 4 — Backend Integration)
+
+- `submit.js`: reads `nodes`/`edges` from Zustand store; on click POSTs `{ nodes, edges }` to `http://localhost:8000/pipelines/parse`; shows `alert()` with Nodes / Edges / Valid DAG; catches network/server errors
+- `main.py`: replaced GET stub with POST `/pipelines/parse`; added CORS middleware for `localhost:3000`; Pydantic `Pipeline` model; DFS cycle detection (`WHITE/GRAY/BLACK` coloring) returns `{ num_nodes, num_edges, is_dag }`
 
 ## Recently Completed (Part 3 — Text Node Enhancements)
 
@@ -75,19 +91,19 @@ frontend/src/
 - 4 existing nodes refactored, behavior preserved
 - 5 new nodes added and working
 
-### Part 2 — Styling
-- No significant styling currently applied
-- Task: design a unified, appealing UI; any React styling library is allowed
+### Part 2 — UI Polish ✅
+- Dark toolbar + footer, light canvas (`#f0f2f5`), white node cards with colored header accent per node type
+- Global `.node-body` CSS handles all form controls — no per-node input styling needed
+- `color` prop on BaseNode drives per-type header color; matching colors on toolbar chips
 
 ### Part 3 — Text Node Enhancements ✅
 - File: `frontend/src/nodes/textNode.js`
 - Task A: `<textarea>` auto-resizes height (scrollHeight) and width (longest line × 8 + 60, clamped 200–600px)
 - Task B: `parseVariables()` uses regex `/\{\{\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\s*\}\}/g` — valid JS identifiers only, deduped, drives dynamic left-side Handles via `inputs` prop on BaseNode
 
-### Part 4 — Backend Integration
-- Frontend file: `frontend/src/submit.js`
-- Backend file: `backend/main.py`, endpoint: `POST /pipelines/parse`
-- Task: send `{ nodes, edges }` on button click → backend returns `{ num_nodes: int, num_edges: int, is_dag: bool }` → display user-friendly alert
+### Part 4 — Backend Integration ✅
+- Frontend: `submit.js` reads store, POSTs `{ nodes, edges }`, shows formatted alert, handles errors
+- Backend: `main.py` POST `/pipelines/parse` — counts nodes/edges, DFS DAG validation, CORS enabled
 
 ## Session Notes
 
