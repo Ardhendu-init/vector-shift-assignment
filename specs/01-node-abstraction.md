@@ -70,7 +70,6 @@ Possible structure:
 
 frontend/src/components/
 BaseNode.js
-NodeHandles.js
 
 frontend/src/nodes/
 InputNode.js

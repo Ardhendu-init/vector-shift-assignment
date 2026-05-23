@@ -1,9 +1,5 @@
 # Project Context
 
-## Project
-
-Frontend Technical Assessment
-
 ## Product Context
 
 This project is a workflow builder / node-based pipeline editor similar to tools like:
@@ -28,7 +24,7 @@ Frontend:
 
 - React
 - JavaScript
-- React Flow (or equivalent node graph library)
+- React Flow
 
 Backend:
 
@@ -37,7 +33,7 @@ Backend:
 
 ---
 
-## Assignment Goals
+## Goals
 
 The provided starter project needs enhancement across architecture, functionality, and UI.
 
